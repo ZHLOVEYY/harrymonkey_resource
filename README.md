@@ -15,13 +15,14 @@
 | 分类 | 内容 | 条目 |
 |---|---|---|
 | [godot](godot/) | Godot 引擎、玩法、渲染 | 1 |
-| [blender](blender/) | 建模、材质、绑定、动画 | 0 |
+| [blender](blender/) | 建模、材质、绑定、动画 | 1 |
 | [video_gen](video_gen/) | AI 视频与图像生成（MiniMax H3 等） | 1 |
 | [vfx](vfx/) | 特效、shader、粒子 | 1 |
 | [sound](sound/) | 音效、音乐、配音 | 0 |
 
 ## 最近更新（7 天） · [完整列表](full.md)
 
+- 2026-11-20 · blender · [MotionBricks：实时生成角色动作的补间模型](blender/2026-11-20-motionbricks/)
 - 2026-11-19 · video_gen · [MiniMax H3 Image 去颗粒节点 EasyFix](video_gen/2026-11-19-h3-image-easyfix/)
 - 2026-11-19 · vfx · [vork：让 agent 用代码定义光怎么走（海市蜃楼、黑洞透镜）](vfx/2026-11-19-vork-mirage-vs-blender/)
 - 2026-11-19 · godot · [俯视像素游戏的高草交互](godot/2026-11-19-tall-grass/)
