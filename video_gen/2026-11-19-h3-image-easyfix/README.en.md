@@ -1,0 +1,42 @@
+# 2026-11-19 · EasyFix: de-graining nodes for MiniMax H3 Image
+
+[中文](README.md) | **English**
+
+![EasyFix comparison: jaguar, 1:1 source pixels](https://raw.githubusercontent.com/PedroMarinhoDev/ComfyUI-H3-Image-EasyFix/a73c53594cd8c362736b69c24814e948a2730fcf/assets/crop_jaguar.jpg)
+
+*Images from the author's repo (Apache-2.0): plain H3 Image on the left, EasyFix on the right, 1:1 crops of the source pixels.*
+
+## What it is
+
+Plain MiniMax H3 Image text-to-image often leaves a layer of grainy speckle on fine texture such as
+skin, fur and stone. PedroMarinhoDev made a set of ComfyUI nodes that removes it without touching
+the prompt or adding post-processing: they change **the sampling itself**.
+
+## Original source
+
+- Original post: [Photogenic Weekend on X](https://x.com/i/web/status/2123455858478883030)
+- Repo: [PedroMarinhoDev/ComfyUI-H3-Image-EasyFix](https://github.com/PedroMarinhoDev/ComfyUI-H3-Image-EasyFix) (Apache-2.0, released 2026-11-19)
+- Author's demo: same-seed before/after pairs at 16 MP and 1:1 crops in the repo README, plus a ready T2I workflow: `workflows/H3 Image EasyFix - T2I.json`
+
+| Full image | 1:1 crop |
+|---|---|
+| ![](https://raw.githubusercontent.com/PedroMarinhoDev/ComfyUI-H3-Image-EasyFix/a73c53594cd8c362736b69c24814e948a2730fcf/assets/compare_jaguar.jpg) | ![](https://raw.githubusercontent.com/PedroMarinhoDev/ComfyUI-H3-Image-EasyFix/a73c53594cd8c362736b69c24814e948a2730fcf/assets/crop_lion.jpg) |
+
+## How it works
+
+| Node | What it does | Suggested setting |
+|---|---|---|
+| H3 Image Steering | On the first one or two steps, nudges the model toward what it draws when an empty picture is added to the prompt, which gives cleaner texture; leaves edit mode (reference pictures) alone | strength 0.7, step 0 only |
+| H3 Image Re-Noise Sampler | On chosen steps of H3's official 6-step schedule, takes the model's predicted finished image and adds fresh noise back, so the model redraws fine texture instead of keeping the grain it settled on early | plan `RNmid` (SSRRRS), s_noise 0.85–0.95 |
+| Resolution Selector | ComfyUI's own selector stops at 16 MP; this one goes to 256 MP | H3 is trained for 4–20 MP |
+
+## Why it is worth a look
+
+- **A hosted API cannot do this.** I checked H3 Image in MiniMax Design: it exposes only `prompt`, `aspect_ratio` and `resolution` (1k / 2k / 4k), with prompt rewriting always on; steps, sigmas and model patches are out of reach. The fix only runs in local ComfyUI on the open weights.
+- **It changes sampling, not post-processing.** Upscaling or denoising patches a finished image after the grain is drawn; here the model draws less grain in the first place. The idea carries over to other few-step models.
+- **Things to watch (from the author's images, not my own run):** the composition changes too at the same seed (in the jaguar pair the foreground branch is gone and the pose differs), because Steering acts on the earliest steps; the fixed version is also somewhat softer overall.
+
+## Running it on my setup
+
+- Needs a ComfyUI build with H3 Image support; my test instance is v0.45.2 and has the H3 Image int8 weights and VAE locally.
+- Speed is the bottleneck: on my M2 Max, 6 steps took about 500 s at 4 MP and about 145 s at 1 MP. The author's pairs are 16 MP, which would be very slow on a Mac; for a reproduction, start with a same-seed A/B at 4 MP.

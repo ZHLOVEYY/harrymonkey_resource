@@ -18,12 +18,13 @@ and the author's demo links.
 |---|---|---|
 | [godot](godot/README.en.md) | Godot engine, gameplay, rendering | 1 |
 | [blender](blender/README.en.md) | Modelling, materials, rigging, animation | 0 |
-| [video_gen](video_gen/README.en.md) | AI video generation (MiniMax H3 and others) | 0 |
+| [video_gen](video_gen/README.en.md) | AI video and image generation (MiniMax H3 and others) | 1 |
 | [vfx](vfx/README.en.md) | Effects, shaders, particles | 0 |
 | [sound](sound/README.en.md) | Sound effects, music, voice | 0 |
 
-## Latest
+## Latest (7 days) · [Full list](full.en.md)
 
+- 2026-11-19 · video_gen · [EasyFix: de-graining nodes for MiniMax H3 Image](video_gen/2026-11-19-h3-image-easyfix/README.en.md)
 - 2026-11-19 · godot · [Interactive tall grass for a top-down pixel game](godot/2026-11-19-tall-grass/README.en.md)
 
 ## Two kinds of entry
