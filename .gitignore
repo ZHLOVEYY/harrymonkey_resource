@@ -1,0 +1,5 @@
+.DS_Store
+.godot/
+override.cfg
+__pycache__/
+.venv/

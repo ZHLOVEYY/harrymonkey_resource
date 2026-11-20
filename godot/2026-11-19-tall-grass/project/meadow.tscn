@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://meadow.gd" id="1_meadow"]
+[ext_resource type="Script" path="res://specks.gd" id="2_specks"]
+[ext_resource type="Script" path="res://cut_line.gd" id="3_cutline"]
+
+[node name="Meadow" type="Node2D"]
+script = ExtResource("1_meadow")
+
+[node name="Sorted" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Specks" type="Node2D" parent="."]
+script = ExtResource("2_specks")
+
+[node name="Overlay" type="Node2D" parent="."]
+script = ExtResource("3_cutline")

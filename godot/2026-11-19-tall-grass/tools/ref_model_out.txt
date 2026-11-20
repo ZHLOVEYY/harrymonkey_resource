@@ -1,0 +1,25 @@
+SPRING
+  target_px            4.667
+  peak_px              6.938
+  peak_tick            11
+  settle_tick          35
+  release_px           -2.271
+  release_tick         11
+  settle_zero_tick     35
+TRAMPLE
+  press_full_tick      8
+  pressed_height_px    6
+  full_height_tick     37
+  press_zero_tick      42
+MATCH AGAINST THE ARTICLE
+  OK  peak_px              article=6.9 recomputed=6.938
+  OK  peak_tick            article=11 recomputed=11
+  OK  settle_tick          article=35 recomputed=35
+  OK  release_px           article=-2.3 recomputed=-2.271
+  OK  settle_zero_tick     article=36 recomputed=35
+  OK  press_full_tick      article=8 recomputed=8
+  OK  pressed_height_px    article=6 recomputed=6
+  OK  full_height_tick     article=37 recomputed=37
+  OK  press_zero_tick      article=42 recomputed=42
+ALL MATCH
+note: settle_zero_tick depends on the tick the player steps away on (article: 36, ours: 35 for a tuft that had already settled)
