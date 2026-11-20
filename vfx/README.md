@@ -1,5 +1,7 @@
 # VFX
 
+**中文** | [English](README.en.md)
+
 特效、shader、粒子相关的实践和链接。
 
 ## 复现与实践

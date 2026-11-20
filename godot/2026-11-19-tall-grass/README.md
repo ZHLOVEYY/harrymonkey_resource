@@ -1,5 +1,7 @@
 # 2026-11-19 · 俯视像素游戏的高草交互（Godot 4.7）
 
+**中文** | [English](README.en.md)
+
 ![三块地对比：草画在地板上 / 只做 y 排序 / 完整做法](media/demo.gif)
 
 完整视频：[media/demo.mp4](media/demo.mp4)（16 秒，1920×1080，60 fps）

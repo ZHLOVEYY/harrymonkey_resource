@@ -1,5 +1,7 @@
 # Video gen
 
+**中文** | [English](README.en.md)
+
 AI 视频生成（MiniMax H3 等）相关的实践和链接。
 
 ## 复现与实践

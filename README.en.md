@@ -1,0 +1,36 @@
+# harrymonkey_resource
+
+[中文](README.md) | **English**
+
+A solo indie game developer's practice log. When I find a good game technique, I run it on my own
+setup and keep the result, my improvements and runnable code here, plus a few links I think are
+worth keeping.
+
+Every entry credits its **original source**. Entries I reproduced come with my demo video, my
+changes and a runnable project; entries I did not reproduce keep the original post, the article
+and the author's demo links.
+
+## Categories
+
+| Category | What | Entries |
+|---|---|---|
+| [godot](godot/README.en.md) | Godot engine, gameplay, rendering | 1 |
+| [blender](blender/README.en.md) | Modelling, materials, rigging, animation | 0 |
+| [video_gen](video_gen/README.en.md) | AI video generation (MiniMax H3 and others) | 0 |
+| [vfx](vfx/README.en.md) | Effects, shaders, particles | 0 |
+| [sound](sound/README.en.md) | Sound effects, music, voice | 0 |
+
+## Latest
+
+- 2026-11-19 · godot · [Interactive tall grass for a top-down pixel game](godot/2026-11-19-tall-grass/README.en.md)
+
+## Two kinds of entry
+
+- **Reproduction**: `<category>/<date>-<slug>/` holds `README.md` / `README.en.md`, `media/` (GIF + video) and a runnable `project/` or `tools/`
+- **Bookmark**: the same dated folder with only the READMEs: links to the original post, the article and the author's demo, and why I think it is worth a look
+
+## License
+
+My own code and assets are MIT (see [LICENSE](LICENSE)).
+Code quoted from other authors names its source in the file header; it stays the original
+author's, under their terms.

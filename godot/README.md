@@ -1,5 +1,7 @@
 # Godot
 
+**中文** | [English](README.en.md)
+
 ## 复现与实践
 
 | 日期 | 条目 | 一句话 | 类型 |
