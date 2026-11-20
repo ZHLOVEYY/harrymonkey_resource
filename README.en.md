@@ -10,6 +10,8 @@ Every entry credits its **original source**. Entries I reproduced come with my d
 changes and a runnable project; entries I did not reproduce keep the original post, the article
 and the author's demo links.
 
+**AI does the work, I review it.** Most code and art here is made by AI to my brief, but I watch every result, run every project and check the numbers before an entry goes in. This is not an AI-slop repo.
+
 ## Categories
 
 | Category | What | Entries |
