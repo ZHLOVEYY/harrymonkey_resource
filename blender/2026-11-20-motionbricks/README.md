@@ -20,13 +20,16 @@
 
 ## 原出处
 
-- 原帖：[NVIDIA AI 在 X 上的介绍](https://x.com/NVIDIAAI/status/2065196536276173306)（2026-06-11）
+- 原帖：[NVIDIA Game Dev 在 X 上的发布帖](https://x.com/NVIDIAGameDev/status/2123138842375107057)（2026-11-18）
+  「Trained on 350,000+ motion clips, MotionBricks generates character motion in real time from target poses.」
+  另有一条更早的官方介绍：[NVIDIA AI 的帖子](https://x.com/NVIDIAAI/status/2065196536276173306)（2026-06-11）
   「One open model. 350,000+ motion clips. 15,000 FPS.」
 - 作者主页：[nvlabs.github.io/motionbricks](https://nvlabs.github.io/motionbricks/)（SIGGRAPH 2026 项目页，含 2 分 40 秒 UE5 无剪辑演示）
 - 论文：[MotionBricks: Scalable Real-Time Motions with Modular Latent Generative Model and Smart Primitives](https://arxiv.org/abs/2604.24833)（ACM TOG / SIGGRAPH 2026）
 - 仓库：[NVlabs/motionbricks](https://github.com/NVlabs/motionbricks)（代码 Apache-2.0）
-- 模型：[nvidia/MotionBricks on Hugging Face](https://huggingface.co/nvidia/MotionBricks)（NVIDIA Open Model Agreement）
+- 模型：[nvidia/MotionBricks on Hugging Face](https://huggingface.co/nvidia/MotionBricks)（NVIDIA Open Model Agreement，SOMA 与 G1 的 SafeTensors checkpoint）
 - 作者的演示：项目页的 UE5 无剪辑演示、机器人演示、Smart Primitive 搭建演示；仓库 `docs/media/` 下的 GIF 与截图
+- 社区：[Atomic 在 X 上的插件演示](https://x.com/i/web/status/2123694448647590018)（2026-11-20，自制 Blender 插件，未开源）
 
 ## 它怎么做到的
 
@@ -62,8 +65,23 @@
 - **接口是工程友好的。** 不是文本也不是标签，是关键帧约束：8 个槽位（4 个 context + 4 个 target）+ 三个 mask，张量形状全部写死在文档里，输入输出名字都给全了。
 - **零样本。** 新任务不用重新训练、不用打标签，作者的说法是"像搭积木一样拼"。
 - **不只做动画。** MotionBricks 现在是 NVIDIA GR00T 全身控制里的动作生成层，能驱动真机 Unitree G1。
+- **Blender 侧已经有三个能用的第三方插件。** NVIDIA 自己的仓库里**没有一行 Blender 代码**（我查过仓库全文，没有 blender / mixamo / rigify 字样），但社区已经补上了这一段：
+
+  | 插件 | 做什么 | 许可 / 状态 |
+  |---|---|---|
+  | [toyxyz/toyxyz-motion-ai-tool](https://github.com/toyxyz/toyxyz-motion-ai-tool) | Blender 里用 Kimodo、ARDY、MotionBricks 生成和编辑 SOMA 动作，运动块 + 姿势关键帧 + 路径，最后导出 FBX；带一个 Windows 伴侣程序跑模型 | GPL-3.0，52 star |
+  | [Ciellllllllll/motion-creator](https://github.com/Ciellllllllll/motion-creator) | 指定首尾姿势 → 生成中间动作 → 存成 Mixamo 骨骼的 FBX；可固定手/脚/躯干/头，加 root 骨，导出脚步落地的 JSON 事件 | 未标许可，README 日文 |
+  | [hyun2xyz/motionbricks-blender](https://github.com/hyun2xyz/motionbricks-blender) | 把 MotionBricks 生成的 `.npz` 当作动画角色导入 Blender，另附走位脚本和录制器 | GPL-3.0，16 star |
+
+  另有 [Atomic 在 X 上演示的自制 Blender 插件](https://x.com/i/web/status/2123694448647590018)（2026-11-20），说正在做"一键重定向到 Mixamo 和 Rigify"——**那个插件没有开源，也没有下载链接**，帖子当时只有十来条浏览，所以这条路线还没落地。
+
+  值得单独说一句的是 **motion-creator 已经实现了 MotionBricks → Mixamo 骨骼 FBX 导出**，也就是"把模型动作接到现成游戏角色上"这一步，社区已经有人做完了，不需要等 Atomic 的那个插件。
+
+  但这三个插件**都要 Windows + NVIDIA 显卡**（官方 runtime 走 TensorRT），所以对没有 N 卡的人，这条路目前还是堵着。
+
 - **要注意的地方（看作者自己的材料得出的）：**
   - 官方 runtime 跑不了非 NVIDIA 的卡，TensorRT 是硬性要求；仓库里也没有 FBX/glTF 导出，BVH 只有读没有写。
   - 自带的 38 个示例动作片段是 **NVIDIA Sample Data Evaluation License**：只允许"评估和测试 NVIDIA 技术"，不能发行、不能放进自己的游戏。更宽的授权要去找数据集方（BONES-SEED）。
   - 模型权重是 NVIDIA Open Model Agreement，可商用，但要读它的条款。
   - SOMA 骨架只有 30 关节，手指几乎不保留，做手部精细动作不够用。
+  - 三个社区插件都以 Windows + NVIDIA 卡为前提；其中一个（motion-creator）仓库里没有 LICENSE 文件，用之前要自己确认授权。

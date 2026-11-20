@@ -26,13 +26,16 @@ become the context of the next generation, so the motion chains into a continuou
 
 ## Original source
 
-- Original post: [NVIDIA AI on X](https://x.com/NVIDIAAI/status/2065196536276173306) (2026-06-11)
+- Original post: [NVIDIA Game Dev on X](https://x.com/NVIDIAGameDev/status/2123138842375107057) (2026-11-18)
+  "Trained on 350,000+ motion clips, MotionBricks generates character motion in real time from target poses."
+  An earlier official announcement: [NVIDIA AI on X](https://x.com/NVIDIAAI/status/2065196536276173306) (2026-06-11)
   "One open model. 350,000+ motion clips. 15,000 FPS."
 - Project page: [nvlabs.github.io/motionbricks](https://nvlabs.github.io/motionbricks/) (SIGGRAPH 2026, with a 2:40 uncut UE5 demo)
 - Paper: [MotionBricks: Scalable Real-Time Motions with Modular Latent Generative Model and Smart Primitives](https://arxiv.org/abs/2604.24833) (ACM TOG / SIGGRAPH 2026)
 - Repo: [NVlabs/motionbricks](https://github.com/NVlabs/motionbricks) (code Apache-2.0)
-- Model: [nvidia/MotionBricks on Hugging Face](https://huggingface.co/nvidia/MotionBricks) (NVIDIA Open Model Agreement)
+- Model: [nvidia/MotionBricks on Hugging Face](https://huggingface.co/nvidia/MotionBricks) (NVIDIA Open Model Agreement; SafeTensors checkpoints for SOMA and G1)
 - Author's demos: the UE5, robotics and Smart Primitive setup videos on the project page; the GIFs and screenshots under `docs/media/` in the repo
+- Community: [Atomic's add-on demo on X](https://x.com/i/web/status/2123694448647590018) (2026-11-20, a custom Blender add-on, not open-sourced)
 
 ## How it works
 
@@ -90,6 +93,28 @@ My reading (not the author's words):
   stacking bricks.
 - **It is not only about animation.** MotionBricks is now the motion-generation layer inside
   NVIDIA's GR00T whole-body control, and it drives a real Unitree G1 robot.
+- **There are already three usable third-party Blender add-ons.** NVIDIA's own repo ships
+  **not a single line of Blender code** (I grepped the whole tree: no `blender`, no `mixamo`,
+  no `rigify`), but the community has filled that gap:
+
+  | Add-on | What it does | Licence / state |
+  |---|---|---|
+  | [toyxyz/toyxyz-motion-ai-tool](https://github.com/toyxyz/toyxyz-motion-ai-tool) | Generates and edits SOMA motion in Blender with Kimodo, ARDY and MotionBricks; motion blocks, pose keys, paths and control layers, then FBX export; a Windows companion runs the models locally | GPL-3.0, 52 stars |
+  | [Ciellllllllll/motion-creator](https://github.com/Ciellllllllll/motion-creator) | Pick the first and last pose, generate the motion in between, save it as an FBX on a Mixamo skeleton; pin hands/feet/torso/head, add a root bone, export footstep JSON events | No licence file, README in Japanese |
+  | [hyun2xyz/motionbricks-blender](https://github.com/hyun2xyz/motionbricks-blender) | Imports MotionBricks `.npz` output as an animated character in Blender, plus a walker script and a recorder | GPL-3.0, 16 stars |
+
+  And [Atomic's custom Blender add-on demo on X](https://x.com/i/web/status/2123694448647590018)
+  (2026-11-20) says one-click retargeting to Mixamo and Rigify is "now adding" — **that add-on
+  is not open-sourced and has no download link**, and the post had only a handful of views, so
+  that route is not shipped.
+
+  Worth calling out on its own: **motion-creator already does MotionBricks → Mixamo-skeleton
+  FBX export**, so the step of getting the model's motion onto an existing game character is
+  already done by someone in the community — there is no need to wait for Atomic's add-on.
+
+  But all three add-ons **require Windows plus an NVIDIA GPU** (the official runtime goes
+  through TensorRT), so without an NVIDIA card this path is still blocked.
+
 - **Things to watch (from the authors' own material):**
   - The official runtime does not run on anything but an NVIDIA card — TensorRT is a hard
     requirement. The repo also has no FBX/glTF export; BVH can be read but not written.
@@ -101,3 +126,5 @@ My reading (not the author's words):
     but read the terms.
   - The SOMA skeleton has only 30 joints and keeps almost no finger detail, which is not enough
     for fine hand animation.
+  - All three community add-ons assume Windows plus an NVIDIA card, and one of them
+    (motion-creator) has no LICENSE file in the repo — check the terms before using it.
