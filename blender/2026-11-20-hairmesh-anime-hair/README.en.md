@@ -21,10 +21,15 @@ application are theirs.
 
 ## Original source
 
-- Original post: [Riel's introduction post on X](https://x.com/i/web/status/2123793496381485245) (2026-11-20)
-  "Draw the silhouette of an anime fringe. Split a tip into two. Turn the locks into quads."
+- Original post: [riel's announcement post on X](https://x.com/koankitsu/status/2117606549652902035) (2026-11-03)
+  "HairMesh is out! A free Blender add-on: draw curves over a head, get clean quad hair meshes.
+  Port of Stylized HairMesh Creator by @CataRackta, made with his permission.
+  Pay what you want: free is fine, tips help keep it updated 🧡"
+  (4.2K likes / 132K views)
+- Download page: [ko-fi.com/rielart/shop](https://ko-fi.com/rielart/shop) (the author sets the
+  price; 0 is an option)
 - Repo: [riel-gab/hairmesh](https://github.com/riel-gab/hairmesh) (GPL-3.0-or-later, created
-  2026-10, 70 stars on 2026-11-20)
+  2026-11-08, 70 stars on 2026-11-20)
 - Original app: [Stylized HairMesh Creator](https://catarackta.netlify.app/) (browser app,
   catarackta's original method)
 - Docs: the `docs/` folder in the repo (getting-started / workflow / tools / shortcuts /
@@ -32,6 +37,7 @@ application are theirs.
 - Author's demo: the `overview.gif` above; `docs/img/` also holds step-by-step screenshots of
   the wall, the conversion preview and the Live/Baked switch
 - Third-party write-up: [80 Level's article](https://80.lv/articles/free-blender-tool-for-creating-stylized-anime-hair) (2026-11-10)
+- Another write-up: [ModelingTechNote (Japanese)](https://modelingtechnote.com/2026/11/04/hairmesh-blender/) (2026-11-04)
 
 ![Author's demo: a wall stretched between two curves](https://raw.githubusercontent.com/riel-gab/hairmesh/3b8e9fe634a7994dfbf68b31c348672401531625/docs/img/gs-wall.png)
 

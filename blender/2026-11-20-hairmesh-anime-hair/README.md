@@ -18,16 +18,21 @@
 
 ## 原出处
 
-- 原帖：[Riel 在 X 上的介绍帖](https://x.com/i/web/status/2123793496381485245)（2026-11-20）
-  「Draw the silhouette of an anime fringe. Split a tip into two. Turn the locks into quads.」
+- 原帖：[riel 在 X 上的发布帖](https://x.com/koankitsu/status/2117606549652902035)（2026-11-03）
+  「HairMesh is out! A free Blender add-on: draw curves over a head, get clean quad hair meshes.
+  Port of Stylized HairMesh Creator by @CataRackta, made with his permission.
+  Pay what you want: free is fine, tips help keep it updated 🧡」
+  （4.2K like / 132K 浏览）
+- 下载页：[ko-fi.com/rielart/shop](https://ko-fi.com/rielart/shop)（作者自己定价，可以选 0）
 - 仓库：[riel-gab/hairmesh](https://github.com/riel-gab/hairmesh)（GPL-3.0-or-later，
-  2026-10 建仓，2026-11-20 时 70 star）
+  2026-11-08 建仓，2026-11-20 时 70 star）
 - 原始应用：[Stylized HairMesh Creator](https://catarackta.netlify.app/)（浏览器版，
   catarackta 的原创方法）
 - 文档：仓库里的 `docs/`（getting-started / workflow / tools / shortcuts / troubleshooting）
 - 作者的演示：上面那张 `overview.gif`；`docs/img/` 下还有画墙、转换预览、Live/Baked 切换
   等分步截图
 - 第三方介绍：[80 Level 的报道](https://80.lv/articles/free-blender-tool-for-creating-stylized-anime-hair)（2026-11-10）
+- 同类报道：[ModelingTechNote 的日文介绍](https://modelingtechnote.com/2026/11/04/hairmesh-blender/)（2026-11-04）
 
 ![作者演示：两条曲线之间拉出一张墙](https://raw.githubusercontent.com/riel-gab/hairmesh/3b8e9fe634a7994dfbf68b31c348672401531625/docs/img/gs-wall.png)
 
