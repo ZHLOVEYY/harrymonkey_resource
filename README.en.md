@@ -16,7 +16,7 @@ and the author's demo links.
 
 | Category | What | Entries |
 |---|---|---|
-| [godot](godot/README.en.md) | Godot engine, gameplay, rendering | 1 |
+| [godot](godot/README.en.md) | Godot engine, gameplay, rendering | 2 |
 | [blender](blender/README.en.md) | Modelling, materials, rigging, animation | 1 |
 | [video_gen](video_gen/README.en.md) | AI video and image generation (MiniMax H3 and others) | 1 |
 | [vfx](vfx/README.en.md) | Effects, shaders, particles | 1 |
@@ -24,6 +24,7 @@ and the author's demo links.
 
 ## Latest (7 days) · [Full list](full.en.md)
 
+- 2026-11-20 · godot · [sprite-stacking: four orthographic views into rotatable 3D pixel art](godot/2026-11-20-sprite-stacking/README.en.md)
 - 2026-11-20 · blender · [MotionBricks: a real-time motion in-betweening model](blender/2026-11-20-motionbricks/README.en.md)
 - 2026-11-19 · video_gen · [EasyFix: de-graining nodes for MiniMax H3 Image](video_gen/2026-11-19-h3-image-easyfix/README.en.md)
 - 2026-11-19 · vfx · [vork: a renderer where an agent writes how light travels (mirages, black-hole lensing)](vfx/2026-11-19-vork-mirage-vs-blender/README.en.md)
