@@ -48,18 +48,14 @@ My reading (not the author's words): the point is **"cannot clip by construction
 - **The author's own counter-intuitive finding:** do not use image-to-3D for complicated props with many parts. Their generated lifeboat "had the right outline and nothing underneath it" and was rejected on sight. A generated mesh is good to measure joints from, or for a background prop nobody walks up to.
 - **Limits (from the author's material, not my own run):** soft goods only partly work, with two of three backpacks failing where controls interact; the rebuilt moving parts are plain ("legs are plain slabs"); there is no engine-side test anywhere in the repo, and the notes say the helicopter is "not yet tested in the game"; `run_all.sh` hard-codes paths on the author's machine and does not run as is.
 
-## The tool I extracted
+## Included tool
 
-[`tools/overlap_check.py`](tools/overlap_check.py): a clash sweep rewritten from the idea of the author's step 5. It does not depend on his per-object scripts and works on any animated `.glb` / `.blend`.
+[`tools/overlap_check.py`](tools/overlap_check.py): a clash sweep written from the idea of the author's step 5. It does not depend on the author's per-object scripts and works on any animated `.glb` / `.blend`.
 
 ```bash
 blender -b --factory-startup -P tools/overlap_check.py -- prop.glb --all-actions --out report.json
 ```
 
 - Two parts that do not touch at rest must not touch at any frame, or the check fails (exit code 1).
-- Parts that already touch at rest (a tyre on the road, a wiper on glass) are only listed as "contact changed", because a turning part keeps bringing new triangles into contact; `--strict` fails those too.
-- Parts that move together on one hinge (a hatch and its glass) are skipped.
-
-Trial results: on a two-control test chest it passes with the hinge in the right place, fails with the hinge moved 6 cm into the box, and fails with the lid rotation sign flipped. On an older vehicle prop it also found a problem nobody had noticed: once the car drives off, all four tyres sink about 4 cm into the road.
-
-A full run on a real generated mesh comes later.
+- Parts that already touch at rest (a tyre on the road, a wiper on glass) are only listed as "contact changed"; `--strict` fails those too.
+- Parts that move together on one hinge are skipped.
