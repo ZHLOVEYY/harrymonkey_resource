@@ -15,13 +15,14 @@
 | 分类 | 内容 | 条目 |
 |---|---|---|
 | [godot](godot/) | Godot 引擎、玩法、渲染 | 2 |
-| [blender](blender/) | 建模、材质、绑定、动画 | 2 |
+| [blender](blender/) | 建模、材质、绑定、动画 | 3 |
 | [video_gen](video_gen/) | AI 视频与图像生成（MiniMax H3 等） | 1 |
 | [vfx](vfx/) | 特效、shader、粒子 | 1 |
 | [sound](sound/) | 音效、音乐、配音 | 0 |
 
 ## 最近更新（7 天） · [完整列表](full.md)
 
+- 2026-11-21 · blender · [AnyMachine：让 AI 生成的模型真的能动](blender/2026-11-21-anymachine-rigs/)
 - 2026-11-20 · godot · [sprite-stacking：四张正交视图变能转的 3D 像素画](godot/2026-11-20-sprite-stacking/)
 - 2026-11-20 · blender · [MotionBricks：实时生成角色动作的补间模型](blender/2026-11-20-motionbricks/)
 - 2026-11-20 · blender · [HairMesh：在 Blender 里画曲线做二次元头发](blender/2026-11-20-hairmesh-anime-hair/)

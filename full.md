@@ -6,6 +6,7 @@
 
 ## 2026-11
 
+- 2026-11-21 · blender · [AnyMachine：让 AI 生成的模型真的能动](blender/2026-11-21-anymachine-rigs/) · 收藏
 - 2026-11-20 · godot · [sprite-stacking：四张正交视图变能转的 3D 像素画](godot/2026-11-20-sprite-stacking/) · 收藏
 - 2026-11-20 · blender · [MotionBricks：实时生成角色动作的补间模型](blender/2026-11-20-motionbricks/) · 收藏
 - 2026-11-20 · blender · [HairMesh：在 Blender 里画曲线做二次元头发](blender/2026-11-20-hairmesh-anime-hair/) · 收藏

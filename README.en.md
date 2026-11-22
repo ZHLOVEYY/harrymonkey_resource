@@ -17,13 +17,14 @@ and the author's demo links.
 | Category | What | Entries |
 |---|---|---|
 | [godot](godot/README.en.md) | Godot engine, gameplay, rendering | 2 |
-| [blender](blender/README.en.md) | Modelling, materials, rigging, animation | 2 |
+| [blender](blender/README.en.md) | Modelling, materials, rigging, animation | 3 |
 | [video_gen](video_gen/README.en.md) | AI video and image generation (MiniMax H3 and others) | 1 |
 | [vfx](vfx/README.en.md) | Effects, shaders, particles | 1 |
 | [sound](sound/README.en.md) | Sound effects, music, voice | 0 |
 
 ## Latest (7 days) · [Full list](full.en.md)
 
+- 2026-11-21 · blender · [AnyMachine: making AI-generated meshes actually move](blender/2026-11-21-anymachine-rigs/README.en.md)
 - 2026-11-20 · godot · [sprite-stacking: four orthographic views into rotatable 3D pixel art](godot/2026-11-20-sprite-stacking/README.en.md)
 - 2026-11-20 · blender · [MotionBricks: a real-time motion in-betweening model](blender/2026-11-20-motionbricks/README.en.md)
 - 2026-11-20 · blender · [HairMesh: draw guide curves, get anime hair meshes in Blender](blender/2026-11-20-hairmesh-anime-hair/README.en.md)
